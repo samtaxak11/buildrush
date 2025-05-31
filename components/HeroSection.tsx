@@ -15,7 +15,7 @@ const HeroSection = () => {
   if (!mounted) return null;
 
   return (
-    <section className="bg-[#0B0B0B] pt-32 pb-24 relative overflow-hidden">
+    <section className="bg-[#0B0B0B] pt-32 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[90vh]">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-[50%] border border-gray-800/50" />
