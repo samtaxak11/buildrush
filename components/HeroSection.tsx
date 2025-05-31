@@ -29,7 +29,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
-            We craft minimum<br />viable <span className="text-[#B6FF40] italic">digital</span> products.
+            We craft MVPs. Fast. Affordable. Hassle&#8209;Free.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Helping founders bring their product to life, attract
