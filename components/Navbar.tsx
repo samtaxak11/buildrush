@@ -24,7 +24,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <CircleIcon className="h-8 w-8 text-[#B6FF40]" />
-          <span className="font-playfair text-xl font-bold text-white">Simple<span className="text-[#B6FF40]">Suite</span></span>
+          <span className="font-playfair text-xl font-bold text-white">build<span className="text-[#B6FF40]">RUSH</span></span>
         </Link>
 
         {/* Mobile menu button */}
