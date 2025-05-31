@@ -1,0 +1,78 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
+const ProjectsSection = () => {
+  return (
+    <section id="projects" className="bg-white py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-gray-500 uppercase tracking-wider mb-3">Our Projects</p>
+          <h2 className="font-playfair text-4xl md:text-5xl leading-tight">
+            Ideas we've brought to life
+          </h2>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-8 mb-16 opacity-70">
+          <span className="text-gray-800 font-medium">cleartask</span>
+          <span className="text-gray-500">Copyhub</span>
+          <span className="text-[#FF5733] font-semibold">MeterMonkey</span>
+          <span className="text-gray-400">haste</span>
+          <span className="text-gray-600">BlackoutPoetry.co</span>
+        </div>
+
+        <motion.div 
+          className="bg-white rounded-xl shadow-lg overflow-hidden"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <div className="flex flex-col lg:flex-row">
+            <div className="p-8 lg:p-12 lg:w-1/2 flex flex-col justify-center">
+              <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 mb-6">
+                MVP
+              </div>
+              
+              <h3 className="font-playfair text-2xl md:text-3xl lg:text-4xl mb-4">
+                API usage analytics platform for Hasura
+              </h3>
+              
+              <p className="text-gray-600 mb-8">
+                Optimize your Hasura API by leveraging usage analytics to make data-driven decisions.
+              </p>
+              
+              <Link 
+                href="#" 
+                className="inline-flex items-center text-[#0B0B0B] font-medium hover:underline w-fit"
+              >
+                Open Project 
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-2">
+                  <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="currentColor"/>
+                </svg>
+              </Link>
+            </div>
+            
+            <div className="lg:w-1/2 relative min-h-[400px]">
+              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent lg:hidden z-10"></div>
+              <div className="relative h-full">
+                <Image 
+                  src="https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  alt="API Analytics Dashboard"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  className="rounded-r-xl"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsSection;
