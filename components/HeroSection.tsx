@@ -46,29 +46,6 @@ const HeroSection = () => {
             </svg>
           </Link>
         </motion.div>
-
-        <motion.div 
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-16 mt-16 opacity-70"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.7 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <div className="h-8">
-            <span className="text-white font-bold">cleartask</span>
-          </div>
-          <div className="h-8">
-            <span className="text-white font-bold">Copyhub</span>
-          </div>
-          <div className="h-8">
-            <span className="text-white font-bold">MeterMonkey</span>
-          </div>
-          <div className="h-8">
-            <span className="text-white font-bold">haste</span>
-          </div>
-          <div className="h-8">
-            <span className="text-white font-bold">BlackoutPoetry.co</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
