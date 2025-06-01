@@ -36,7 +36,7 @@ const processSteps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="bg-white py-24">
+    <section id="process" className="bg-[#f5f5f5] py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-gray-500 uppercase tracking-wider mb-3">The Process</p>
@@ -50,7 +50,8 @@ const ProcessSection = () => {
           {processSteps.map((step, index) => (
             <motion.div
               key={step.title}
-              className="bg-white rounded-lg p-8 border border-gray-100 shadow-sm relative"
+              className="bg-white rounded-lg p-8 border border-gray-100 shadow-[0_2px_4px_rgba(0,0,0,0.1)] 
+                hover:shadow-[0_4px_8px_rgba(0,0,0,0.1)] transition-shadow duration-300 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
