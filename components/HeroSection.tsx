@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { MoveDown } from "lucide-react";
 
 const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
@@ -36,17 +37,35 @@ const HeroSection = () => {
             Helping founders bring their product to life, attract
             early users, and iterate to product-market fit.
           </p>
-          <a
-            href="https://tally.so/r/m6y4xA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[#B6FF40] text-[#0B0B0B] font-medium rounded-full px-8 py-3 hover:shadow-[0_0_20px_rgba(182,255,64,0.3)] transition-all duration-300"
-          >
-            Share your Idea
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-2">
-              <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#0B0B0B"/>
-            </svg>
-          </a>
+          <div className="space-y-6">
+            <a
+              href="https://tally.so/r/m6y4xA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-[#B6FF40] text-[#0B0B0B] font-medium rounded-full px-8 py-3 hover:shadow-[0_0_20px_rgba(182,255,64,0.3)] transition-all duration-300"
+            >
+              Share your Idea
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="ml-2">
+                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#0B0B0B"/>
+              </svg>
+            </a>
+            <div className="text-gray-400 text-sm">
+              We're accepting only 3 new clients for May. Fill out the form to share your vision,<br />we'll reply within 24 hours.
+            </div>
+            <motion.div
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="text-[#B6FF40]"
+            >
+              <MoveDown className="mx-auto w-6 h-6" />
+            </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>
