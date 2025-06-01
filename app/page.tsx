@@ -12,6 +12,15 @@ import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import { NavBar } from "@/components/ui/tubelight-navbar";
+import { Home, Briefcase, HelpCircle, DollarSign } from 'lucide-react';
+
+const navItems = [
+  { name: 'Home', url: '#', icon: Home },
+  { name: 'Projects', url: '#projects', icon: Briefcase },
+  { name: 'FAQ', url: '#faq', icon: HelpCircle },
+  { name: 'Pricing', url: '#pricing', icon: DollarSign }
+];
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +48,7 @@ export default function Home() {
       <FaqSection />
       <CtaSection />
       <Footer />
+      <NavBar items={navItems} />
     </main>
   );
 }
