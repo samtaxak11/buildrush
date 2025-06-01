@@ -72,3 +72,4 @@ export function NavBar({ items }: NavBarProps) {
       </div>
     </div>
   );
+}
