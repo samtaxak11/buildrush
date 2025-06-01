@@ -23,14 +23,9 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-<<<<<<< HEAD
-          <CircleIcon className="h-8 w-8 text-[#B6FF40]" />
-          {/* <span className="font-playfair text-xl font-bold text-white">build<span className="text-[#B6FF40]">RUSH</span></span> */}
-=======
-          <span className="font-playfair text-xl font-bold text-white" style={{ fontFamily: "'Times New Roman Condensed', 'Times New Roman', serif" }}>
+          <span className="font-playfair text-xl font-bold text-white">
             build<span className="text-[#B6FF40]">RUSH</span>
           </span>
->>>>>>> 39a0a731e3f5de7dd37108785229f2b8998e1c3d
         </Link>
 
         <button 
