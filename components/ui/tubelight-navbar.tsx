@@ -1,87 +1,74 @@
-"use client"
+"use client";
 
-import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { DivideIcon as LucideIcon } from "lucide-react"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface NavItem {
-  name: string
-  url: string
-  icon: LucideIcon
+  name: string;
+  url: string;
+  isExternal?: boolean;
+  isSpecial?: boolean;
 }
 
 interface NavBarProps {
-  items: NavItem[]
-  className?: string
+  items?: NavItem[];
 }
 
-export function NavBar({ items, className }: NavBarProps) {
-  const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
+export function NavBar({ items }: NavBarProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+  const navItems: NavItem[] = [
+    { name: 'Home', url: '#' },
+    { name: 'Work', url: '#projects' },
+    { name: 'Process', url: '#how-it-works' },
+    { name: 'Pricing', url: '#pricing' },
+    { name: 'Connect on X', url: 'https://twitter.com/buildrushapp', isExternal: true },
+    { name: 'Share your Idea', url: 'https://tally.so/r/m6y4xA', isExternal: true, isSpecial: true }
+  ];
 
   return (
-    <div
-      className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 p-4 bg-transparent backdrop-blur-sm",
-        className
-      )}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-center gap-3 bg-black/5 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg border border-white/10">
-          {items.map((item) => {
-            const Icon = item.icon
-            const isActive = activeTab === item.name
-
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
+      <div className="max-w-fit mx-auto">
+        <div className="flex items-center justify-center gap-3 bg-white py-2 px-4 rounded-full shadow-lg">
+          {navItems.map((item, index) => {
+            const isHovered = hoveredIndex === index;
+            
             return (
               <Link
                 key={item.name}
                 href={item.url}
-                onClick={() => setActiveTab(item.name)}
+                target={item.isExternal ? "_blank" : undefined}
+                rel={item.isExternal ? "noopener noreferrer" : undefined}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-6 py-2 rounded-full transition-colors",
-                  "text-white/80 hover:text-white",
-                  isActive && "bg-white/10 text-white"
+                  "relative px-3 py-1.5 text-sm font-medium transition-colors",
+                  item.isSpecial ? "bg-[#B6FF40] text-black rounded-full" : "text-black hover:text-gray-600",
+                  {
+                    "transition-all duration-300": isHovered,
+                  }
                 )}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                }}
               >
-                <span className="hidden md:inline">{item.name}</span>
-                <span className="md:hidden">
-                  <Icon size={18} strokeWidth={2.5} />
-                </span>
-                {isActive && (
+                {isHovered && (
                   <motion.div
-                    layoutId="lamp"
-                    className="absolute inset-0 w-full bg-white/5 rounded-full -z-10"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  >
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-white/50 rounded-t-full">
-                      <div className="absolute w-12 h-6 bg-white/20 rounded-full blur-md -top-2 -left-2" />
-                      <div className="absolute w-8 h-6 bg-white/20 rounded-full blur-md -top-1" />
-                      <div className="absolute w-4 h-4 bg-white/20 rounded-full blur-sm top-0 left-2" />
-                    </div>
-                  </motion.div>
+                    layoutId="hover"
+                    className="absolute bottom-0 left-0 right-0 h-full bg-black/5 rounded-full -z-10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  />
                 )}
+                {item.name}
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
-}
+  );
