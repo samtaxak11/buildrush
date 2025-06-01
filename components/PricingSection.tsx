@@ -43,7 +43,7 @@ const plans = [
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="bg-[#0B0B0B] py-24 rounded-t-[40px]">
+    <section id="pricing" className="bg-[#0B0B0B] py-24 rounded-t-[48px] rounded-b-[48px]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight">

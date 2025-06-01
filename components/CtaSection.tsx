@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const CtaSection = () => {
   return (
-    <section className="bg-[#0B0B0B] py-24">
+    <section className="bg-[#0B0B0B] py-24 rounded-t-[48px]">
       <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,10 +18,12 @@ const CtaSection = () => {
           </h2>
 
           <Link
-            href="#"
+            href="https://tally.so/r/m6y4xA"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-[#B6FF40] text-[#0B0B0B] font-medium rounded-full px-8 py-4 hover:shadow-[0_0_20px_rgba(182,255,64,0.3)] transition-all duration-300"
           >
-            Book Intro Call
+            Share your Idea
           </Link>
         </motion.div>
       </div>

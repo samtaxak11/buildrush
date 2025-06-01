@@ -76,7 +76,7 @@ const benefits = [
 
 const WhyUsSection = () => {
   return (
-    <section id="why-us" className="bg-[#0B0B0B] py-24 rounded-t-[40px] relative">
+    <section id="why-us" className="bg-[#0B0B0B] py-24 rounded-t-[48px] rounded-b-[48px] relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-gray-400 uppercase tracking-wider mb-3">Why us</p>
