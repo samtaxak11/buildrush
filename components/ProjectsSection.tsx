@@ -15,14 +15,6 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-8 mb-16 opacity-70">
-          <span className="text-gray-800 font-medium">cleartask</span>
-          <span className="text-gray-500">Copyhub</span>
-          <span className="text-[#FF5733] font-semibold">MeterMonkey</span>
-          <span className="text-gray-400">haste</span>
-          <span className="text-gray-600">BlackoutPoetry.co</span>
-        </div>
-
         <motion.div 
           className="bg-white rounded-xl shadow-lg overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
