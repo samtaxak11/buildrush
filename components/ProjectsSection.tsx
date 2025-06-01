@@ -29,11 +29,11 @@ const ProjectsSection = () => {
               </div>
               
               <h3 className="font-playfair text-2xl md:text-3xl lg:text-4xl mb-4">
-                API usage analytics platform for Hasura
+                Digital health monitoring platform
               </h3>
               
               <p className="text-gray-600 mb-8">
-                Optimize your Hasura API by leveraging usage analytics to make data-driven decisions.
+                A comprehensive health tracking solution that helps users monitor their wellness journey and achieve their fitness goals.
               </p>
               
               <Link 
@@ -50,8 +50,8 @@ const ProjectsSection = () => {
             <div className="lg:w-1/2 relative min-h-[400px]">
               <div className="relative h-full">
                 <Image 
-                  src="https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                  alt="API Analytics Dashboard"
+                  src="https://images.pexels.com/photos/3846115/pexels-photo-3846115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                  alt="Health Monitoring Dashboard"
                   fill
                   style={{ objectFit: 'cover' }}
                   className="rounded-r-xl"
