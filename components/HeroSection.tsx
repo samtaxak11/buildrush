@@ -18,14 +18,7 @@ const HeroSection = () => {
   return (
     <section className="bg-[#0B0B0B] pt-32 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[110vh]">
       <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/hero copy.png"
-          alt="Background"
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 via-[#0B0B0B]/50 to-[#0B0B0B] z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-[50%] border border-gray-800/50" />
       </div>
 
