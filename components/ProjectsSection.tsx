@@ -48,7 +48,6 @@ const ProjectsSection = () => {
             </div>
             
             <div className="lg:w-1/2 relative min-h-[400px]">
-              <div className="absolute inset-0 bg-gradient-to-r from-white to-transparent lg:hidden z-10"></div>
               <div className="relative h-full">
                 <Image 
                   src="https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
