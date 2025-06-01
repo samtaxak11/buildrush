@@ -34,11 +34,11 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 p-4 bg-white border-t border-gray-200",
+        "fixed bottom-0 left-0 right-0 z-50 p-4 bg-black border-t border-gray-200",
         className
       )}
     >
-      <div className="max-w-md mx-auto flex items-center justify-between gap-3 py-1 px-1 rounded-full shadow-lg">
+      <div className="max-w-md mx-auto flex items-center justify-between gap-3 py-1 px-1 rounded-full shadow-lg bg-white">
         {items.map((item) => {
           const Icon = item.icon
           const isActive = activeTab === item.name
