@@ -13,16 +13,16 @@ import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { Home, Briefcase, HelpCircle, DollarSign } from 'lucide-react';
+import { Home as HomeIcon, Briefcase, HelpCircle, DollarSign } from 'lucide-react';
 
 const navItems = [
-  { name: 'Home', url: '#', icon: Home },
+  { name: 'Home', url: '#', icon: HomeIcon },
   { name: 'Projects', url: '#projects', icon: Briefcase },
   { name: 'FAQ', url: '#faq', icon: HelpCircle },
   { name: 'Pricing', url: '#pricing', icon: DollarSign }
 ];
 
-export default function Home() {
+export default function HomePage() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
