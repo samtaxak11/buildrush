@@ -23,11 +23,16 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
+<<<<<<< HEAD
           <CircleIcon className="h-8 w-8 text-[#B6FF40]" />
           {/* <span className="font-playfair text-xl font-bold text-white">build<span className="text-[#B6FF40]">RUSH</span></span> */}
+=======
+          <span className="font-playfair text-xl font-bold text-white" style={{ fontFamily: "'Times New Roman Condensed', 'Times New Roman', serif" }}>
+            build<span className="text-[#B6FF40]">RUSH</span>
+          </span>
+>>>>>>> 39a0a731e3f5de7dd37108785229f2b8998e1c3d
         </Link>
 
-        {/* Mobile menu button */}
         <button 
           className="lg:hidden text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -35,26 +40,6 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Desktop navigation */}
-        {/* <nav className="hidden lg:flex items-center space-x-8">
-          <Link href="#process" className="text-white hover:text-[#B6FF40] transition-colors">
-            Process
-          </Link>
-          <Link href="#projects" className="text-white hover:text-[#B6FF40] transition-colors">
-            Projects
-          </Link>
-          <Link href="#faq" className="text-white hover:text-[#B6FF40] transition-colors">
-            FAQ
-          </Link>
-          <Link href="#about" className="text-white hover:text-[#B6FF40] transition-colors">
-            About
-          </Link>
-          <Link href="#course" className="text-white hover:text-[#B6FF40] transition-colors">
-            Course
-          </Link>
-        </nav> */}
-
-        {/* CTA Button */}
         <Link 
           href="#pricing" 
           className="hidden lg:flex items-center border border-[#B6FF40] text-[#B6FF40] hover:bg-[#B6FF40]/10 rounded-full px-6 py-2 transition-all duration-300"
@@ -66,7 +51,6 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
         </Link>
       </div>
 
-      {/* Mobile menu */}
       {isMenuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0B0B0B] border-t border-gray-800 p-4">
           <nav className="flex flex-col space-y-4">
