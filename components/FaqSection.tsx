@@ -7,11 +7,11 @@ import { ChevronDown, Mail } from "lucide-react";
 const faqs = [
   {
     question: "How long does the entire process take?",
-    answer: "From start to finish, our process typically takes 4-6 weeks for a complete MVP. For prototypes, we can deliver in 2-4 weeks. We have a streamlined process to ensure quick turnaround while maintaining high quality."
+    answer: "From start to finish, our process typically takes 4-5 weeks for a complete MVP. We have a streamlined process to ensure quick turnaround while maintaining high quality."
   },
   {
     question: "What happens after the MVP is completed?",
-    answer: "After completion, we provide 3 months of support to help you navigate the early stages of your product launch. We can also discuss ongoing development, feature additions, or technical support beyond that period if needed."
+    answer: "After completion, we provide 1 week of maintenance & support to help you with critical bug fixes and necessary optimizations. We can also discuss ongoing development, feature additions, or technical support beyond that period if needed."
   },
   {
     question: "How much input do I need to provide during the process?",
@@ -20,10 +20,6 @@ const faqs = [
   {
     question: "Do you help with marketing or user acquisition?",
     answer: "While our core focus is on building your MVP, we provide guidance on product-market fit and can suggest growth strategies. For specialized marketing needs, we can connect you with trusted partners in our network."
-  },
-  {
-    question: "What technology stack do you use?",
-    answer: "We select the most appropriate technology for your specific needs. For MVPs, we typically use React, Next.js, Node.js, and modern cloud infrastructure to ensure scalability and future-proofing of your product."
   },
 ];
 
@@ -77,7 +73,7 @@ const FaqSection = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
             href="mailto:hello@simplesuite.com"
@@ -86,7 +82,7 @@ const FaqSection = () => {
             <Mail className="w-5 h-5 mr-2" />
             Drop us an email
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

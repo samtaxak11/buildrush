@@ -1,5 +1,6 @@
 "use client";
 
+import { time } from "console";
 import { motion } from "framer-motion";
 
 const steps = [
@@ -12,27 +13,35 @@ const steps = [
     title: "Confirm in",
   },
   {
-    time: "4-6 weeks",
+    time: "4-5 weeks",
     title: "Complete in",
   },
+  {
+    time: "1 week",
+    title: "Maintenance & Support",
+  }
 ];
 
 const supportingSteps = [
   {
     number: 1,
-    description: "Initial discovery call to learn about your idea and determine if we can help.",
+    description: "Book a call with us to discuss your vision. We'll explore your idea and understand your business goals in detail.",
   },
   {
     number: 2,
-    description: "Start the project with a deep dive to ensure we have everything we need.",
+    description: "Receive a detailed MVP plan followed by a comprehensive PRD with technical implementation approach for complete clarity.",
   },
   {
     number: 3,
-    description: "Two feedback calls to showcase our branding, design, & build progress.",
+    description: "Once the proposal is signed, development begins. Your MVP will be ready in 5 weeks with regular updates throughout the process.",
   },
   {
     number: 4,
-    description: "Regular async updates to make sure you're happy with the end result.",
+    description: "Get your fully functional MVP with all planned features, ready for market launch and user acquisition.",
+  },
+  {
+    number: 5,
+    description: "Enjoy a week of maintenance support including critical bug fixes and necessary optimizations.",
   },
 ];
 

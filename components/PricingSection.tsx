@@ -5,37 +5,37 @@ import { Check, X } from "lucide-react";
 import Link from "next/link";
 
 const plans = [
+  // {
+  //   title: "Prototype",
+  //   price: "£4,500",
+  //   timeline: "2-4 Weeks",
+  //   description: "Perfect for validating ideas and raising funds",
+  //   features: [
+  //     { name: "UX/UI Design", included: true },
+  //     { name: "Brand Identity", included: true },
+  //     { name: "Single MVP Feature", included: true },
+  //     { name: "Static Website", included: true },
+  //     { name: "Complete in 2-4 weeks", included: true },
+  //     { name: "Technical Documentation", included: false },
+  //     { name: "Development Handover", included: false },
+  //     { name: "3 months support", included: false },
+  //   ],
+  //   popular: false,
+  // },
   {
-    title: "Prototype",
-    price: "£4,500",
-    timeline: "2-4 Weeks",
-    description: "Perfect for validating ideas and raising funds",
+    title: "MVP Development Package",
+    price: "Starting at $1,500",
+    timeline: "Limited availability - Only 3 spots for June.",
+    description: "What's Included:",
     features: [
-      { name: "UX/UI Design", included: true },
-      { name: "Brand Identity", included: true },
-      { name: "Single MVP Feature", included: true },
-      { name: "Static Website", included: true },
-      { name: "Complete in 2-4 weeks", included: true },
-      { name: "Technical Documentation", included: false },
-      { name: "Development Handover", included: false },
-      { name: "3 months support", included: false },
-    ],
-    popular: false,
-  },
-  {
-    title: "MVP",
-    price: "£7,500",
-    timeline: "4-6 Weeks",
-    description: "Complete solution with all core functionality",
-    features: [
-      { name: "UX/UI Design", included: true },
-      { name: "Brand Identity", included: true },
-      { name: "All Core MVP Features", included: true },
-      { name: "Interactive Prototype", included: true },
-      { name: "Complete in 4-6 weeks", included: true },
-      { name: "Technical Documentation", included: true },
-      { name: "Development Handover", included: true },
-      { name: "3 months support", included: true },
+      { name: "Complete MVP development in 4-5 weeks", included: true },
+      { name: "Web application/ Mobile App", included: true },
+      { name: "Modern, scalable tech stack", included: true },
+      { name: "Seamless integrations (payments, auth, etc.)", included: true },
+      { name: "Personalized, founder-led development", included: true },
+      { name: "Regular updates and transparent process", included: true },
+      { name: "Technical Documentation & Development Handover", included: true },
+      { name: "1 week maintenance & support", included: true },
     ],
     popular: true,
   }
@@ -67,7 +67,7 @@ const PricingSection = () => {
             >
               {plan.popular && (
                 <div className="bg-[#B6FF40] text-[#0B0B0B] py-1 text-center text-sm font-medium">
-                  Most Popular
+                  One Time
                 </div>
               )}
 
@@ -76,7 +76,7 @@ const PricingSection = () => {
                 <div className="flex items-end mb-1">
                   <span className="text-4xl font-bold text-white">{plan.price}</span>
                 </div>
-                <div className="text-gray-400 mb-4">Est. {plan.timeline}</div>
+                <div className="text-gray-400 mb-4">{plan.timeline}</div>
                 <p className="text-gray-300 mb-6">{plan.description}</p>
 
                 <ul className="space-y-3 mb-8">
@@ -95,14 +95,16 @@ const PricingSection = () => {
                 </ul>
 
                 <Link
-                  href="#"
+                  href="https://tally.so/r/m6y4xA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`block text-center py-3 px-4 rounded-full font-medium ${
                     plan.popular
                       ? "bg-[#B6FF40] text-[#0B0B0B] hover:shadow-[0_0_20px_rgba(182,255,64,0.3)]"
                       : "border border-gray-700 text-white hover:bg-gray-800"
                   } transition-all duration-300`}
                 >
-                  Book Intro Call
+                  Share your Idea
                 </Link>
               </div>
             </motion.div>

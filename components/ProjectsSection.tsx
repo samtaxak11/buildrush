@@ -15,7 +15,7 @@ const ProjectsSection = () => {
           </h2>
         </div>
 
-        <motion.div 
+        {/* <motion.div 
           className="bg-white rounded-xl shadow-lg overflow-hidden"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const ProjectsSection = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

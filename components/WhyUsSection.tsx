@@ -60,12 +60,16 @@ const comparisons = [
 const benefits = [
   {
     icon: Network,
-    title: "MVPs you actually need",
+    title1: "MVPs you ",
+    title2: "actually ",
+    title3: "need",
     description: "No more over-engineered products. We build fantastic, functional, and effective products that founders use to iterate to product-market fit, reducing your capital and time risk.",
   },
   {
     icon: DollarSign,
-    title: "Only pay for what's needed",
+    title1: "Only ",
+    title2: "pay",
+    title3: " for what's needed",
     description: "Avoid paying for unnecessary scope and agency members, or wasting time managing freelancers. Only pay for what's needed, a dedicated duo of designer & developer.",
   },
 ];
@@ -82,7 +86,7 @@ const WhyUsSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
           {comparisons.map((option, index) => (
             <motion.div
               key={option.title}
@@ -138,14 +142,14 @@ const WhyUsSection = () => {
               )}
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         <div className="text-center text-xs text-gray-500 mb-8">Our Why</div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#111111] rounded-xl p-8">
           {benefits.map((benefit, index) => (
             <motion.div
-              key={benefit.title}
+              key={benefit.title1}
               className="flex flex-col"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -154,7 +158,8 @@ const WhyUsSection = () => {
             >
               <benefit.icon className="h-8 w-8 text-[#B6FF40] mb-4" />
               <h3 className="text-xl text-white font-medium mb-3">
-                <span className="font-normal">MVPs you</span> <em>actually</em> <span className="font-normal">need</span>
+                {/* <span className="font-normal">MVPs you</span> <em>actually</em> <span className="font-normal">need</span> */}
+                <span className="font-normal">{benefit.title1}</span> <em>{benefit.title2}</em> <span className="font-normal">{benefit.title3}</span>
               </h3>
               <p className="text-gray-400 text-sm">
                 {benefit.description}
