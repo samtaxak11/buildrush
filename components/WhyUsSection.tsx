@@ -1,61 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, X, HelpCircle, Network, DollarSign } from "lucide-react";
+import { Clock, Users, Layout, DollarSign, Server, Network, Rocket, Database, Monitor, Coins } from "lucide-react";
 
-const comparisons = [
-  {
-    title: "Freelancers/Hires",
-    features: [
-      { name: "Custom product", value: true },
-      { name: "Expensive (£30k+)", value: false },
-      { name: "Long duration (3+ months)", value: false },
-      { name: "Self-managed process", value: false },
-      { name: "Lack founder/MVP awareness", value: false },
-    ],
-  },
-  {
-    title: "Agencies",
-    features: [
-      { name: "Custom product", value: true },
-      { name: "Expensive (£40k+)", value: false },
-      { name: "Long duration (3+ months)", value: false },
-      { name: "Intense process", value: false },
-      { name: "Lack MVP awareness", value: false },
-    ],
-  },
-  {
-    title: "Simple Suite",
-    features: [
-      { name: "Custom product", value: true },
-      { name: "Great value (£7.5k)", value: true },
-      { name: "Short duration (4-6 weeks)", value: true },
-      { name: "Simple process", value: true },
-      { name: "Founder & MVP awareness", value: true },
-    ],
-    highlighted: true,
-  },
-  {
-    title: "No-Code",
-    features: [
-      { name: "Limited product", value: false },
-      { name: "Low cost", value: true },
-      { name: "Long duration (3+ months)", value: false },
-      { name: "Difficult process", value: false },
-      { name: "Self Awareness", value: null },
-    ],
-  },
-  {
-    title: "Technical Co-Founder",
-    features: [
-      { name: "Custom product", value: true },
-      { name: "High cost (50% ownership)", value: false },
-      { name: "Long duration (4+ months)", value: false },
-      { name: "Intense process", value: false },
-      { name: "Self Awareness", value: null },
-    ],
-  },
-];
+const approaches = {
+  traditional: [
+    {
+      icon: Clock,
+      title: "Lengthy Timelines",
+      description: "Months of planning and design before any code is written, delaying time-to-market"
+    },
+    {
+      icon: Users,
+      title: "Bloated Teams",
+      description: "Large teams with project managers adding unnecessary overhead and complexity"
+    },
+    {
+      icon: Layout,
+      title: "Excessive Design Phases",
+      description: "Weeks spent on static wireframes and mockups before seeing anything functional"
+    },
+    {
+      icon: DollarSign,
+      title: "High Upfront Costs",
+      description: "$10K-$20K invested before validating if your idea has market traction"
+    },
+    {
+      icon: Server,
+      title: "Complex Infrastructure",
+      description: "Time and resources wasted on managing servers and complex deployment pipelines"
+    }
+  ],
+  aiPowered: [
+    {
+      icon: Rocket,
+      title: "Rapid MVP Development",
+      description: "From concept to market-ready MVP in 5 weeks with iterative development"
+    },
+    {
+      icon: Network,
+      title: "AI-Augmented Team",
+      description: "Small, efficient team leveraging AI tools for faster decision-making and execution"
+    },
+    {
+      icon: Monitor,
+      title: "No Lengthy Design Phases",
+      description: "Skip lengthy design phases with Lovable/V0, creating working UI and app logic immediately"
+    },
+    {
+      icon: Coins,
+      title: "Cost-Effective Validation",
+      description: "Validate your idea with real users before investing significant capital"
+    },
+    {
+      icon: Database,
+      title: "Scalable Infrastructure",
+      description: "Modern stack with Supabase and Vercel for automatic scaling without maintenance headaches"
+    }
+  ]
+};
 
 const benefits = [
   {
@@ -86,63 +89,67 @@ const WhyUsSection = () => {
           </h2>
         </div>
 
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
-          {comparisons.map((option, index) => (
-            <motion.div
-              key={option.title}
-              className={`rounded-xl p-6 ${
-                option.highlighted
-                  ? "border border-[#B6FF40] bg-[#0B0B0B]/80"
-                  : "border border-gray-800 bg-[#0B0B0B]/50"
-              }`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <div className="flex items-center mb-6">
-                <h3 className="text-xl text-white font-medium">
-                  {option.title}
-                </h3>
-                {option.highlighted && (
-                  <div className="ml-auto">
-                    <div className="w-8 h-8 rounded-full bg-[#B6FF40] flex items-center justify-center text-[#0B0B0B]">
-                      <Check size={18} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {/* Traditional Approach */}
+          <div>
+            <h3 className="text-2xl font-medium text-red-400 mb-6 flex items-center">
+              <Clock className="w-6 h-6 mr-2" />
+              Traditional Approach
+            </h3>
+            <div className="space-y-6">
+              {approaches.traditional.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  className="bg-[#111111]/50 rounded-lg p-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-start">
+                    <div className="bg-red-900/20 p-2 rounded-lg mr-4">
+                      <item.icon className="w-5 h-5 text-red-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-medium mb-1">{item.title}</h4>
+                      <p className="text-gray-400 text-sm">{item.description}</p>
                     </div>
                   </div>
-                )}
-              </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
 
-              <ul className="space-y-3">
-                {option.features.map((feature) => (
-                  <li
-                    key={feature.name}
-                    className="flex items-center text-sm"
-                  >
-                    {feature.value === true ? (
-                      <Check size={16} className="text-[#B6FF40] mr-2" />
-                    ) : feature.value === false ? (
-                      <X size={16} className="text-gray-500 mr-2" />
-                    ) : (
-                      <HelpCircle size={16} className="text-gray-500 mr-2" />
-                    )}
-                    <span className={feature.value ? "text-white" : "text-gray-500"}>
-                      {feature.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {option.highlighted && (
-                <div className="mt-6 space-y-2">
-                  {Array(5).fill(0).map((_, i) => (
-                    <div key={i} className="h-2 bg-[#111111] rounded-full" />
-                  ))}
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </div> */}
+          {/* AI-Powered Approach */}
+          <div>
+            <h3 className="text-2xl font-medium text-[#B6FF40] mb-6 flex items-center">
+              <Rocket className="w-6 h-6 mr-2" />
+              Our AI-Powered Approach
+            </h3>
+            <div className="space-y-6">
+              {approaches.aiPowered.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  className="bg-[#111111]/50 rounded-lg p-4"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-start">
+                    <div className="bg-[#B6FF40]/10 p-2 rounded-lg mr-4">
+                      <item.icon className="w-5 h-5 text-[#B6FF40]" />
+                    </div>
+                    <div>
+                      <h4 className="text-white font-medium mb-1">{item.title}</h4>
+                      <p className="text-gray-400 text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <div className="text-center text-xs text-gray-500 mb-8">Our Why</div>
 
@@ -158,8 +165,9 @@ const WhyUsSection = () => {
             >
               <benefit.icon className="h-8 w-8 text-[#B6FF40] mb-4" />
               <h3 className="text-xl text-white font-medium mb-3">
-                {/* <span className="font-normal">MVPs you</span> <em>actually</em> <span className="font-normal">need</span> */}
-                <span className="font-normal">{benefit.title1}</span> <em>{benefit.title2}</em> <span className="font-normal">{benefit.title3}</span>
+                <span className="font-normal">{benefit.title1}</span>
+                <em>{benefit.title2}</em>
+                <span className="font-normal">{benefit.title3}</span>
               </h3>
               <p className="text-gray-400 text-sm">
                 {benefit.description}
