@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Search, Paintbrush, Layout, Code } from "lucide-react";
+import { Search, Paintbrush, Layout, Code, Package, Zap, Layers } from "lucide-react";
 
 const processSteps = [
   {
@@ -34,6 +34,24 @@ const processSteps = [
   },
 ];
 
+const features = [
+  {
+    icon: Package,
+    title: "Complete Package",
+    description: "Your MVP includes a sleek web application, a high-converting landing page, and SEO-ready content. Everything is built to launch fast and scale effortlessly.",
+  },
+  {
+    icon: Zap,
+    title: "Seamless Integrations",
+    description: "We set up all necessary integrations for you, including payment gateways, user authentication, and email marketing platforms.",
+  },
+  {
+    icon: Layers,
+    title: "Modern, Scalable Tech",
+    description: "We use the latest technologies combined with AI to ensure your MVP is fast, stable, and built to scale.",
+  },
+];
+
 const ProcessSection = () => {
   return (
     <section id="process" className="bg-[#f5f5f5] py-24">
@@ -46,7 +64,7 @@ const ProcessSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.title}
@@ -68,6 +86,25 @@ const ProcessSection = () => {
               <div className="mt-auto">
                 <step.icon className="w-12 h-12 text-[#B6FF40]" />
               </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 bg-[#0B0B0B] rounded-[32px] p-12">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, margin: "-50px" }}
+            >
+              <div className="flex justify-center mb-6">
+                <feature.icon className="w-12 h-12 text-[#B6FF40]" />
+              </div>
+              <h3 className="text-xl font-medium text-white mb-4">{feature.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>
