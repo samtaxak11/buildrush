@@ -91,8 +91,8 @@ const WhyUsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Traditional Approach */}
-          <div>
-            <h3 className="text-2xl font-medium text-red-400 mb-6 flex items-center">
+          <div className="bg-[#111111] rounded-xl p-6">
+            <h3 className="text-2xl font-medium text-red-400 mb-6 text-center flex items-center justify-center">
               <Clock className="w-6 h-6 mr-2" />
               Traditional Approach
             </h3>
@@ -100,7 +100,7 @@ const WhyUsSection = () => {
               {approaches.traditional.map((item, index) => (
                 <motion.div
                   key={item.title}
-                  className="bg-[#111111]/50 rounded-lg p-4"
+                  className="bg-[#0B0B0B]/50 rounded-lg p-4"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -121,8 +121,8 @@ const WhyUsSection = () => {
           </div>
 
           {/* AI-Powered Approach */}
-          <div>
-            <h3 className="text-2xl font-medium text-[#B6FF40] mb-6 flex items-center">
+          <div className="bg-[#111111] rounded-xl p-6">
+            <h3 className="text-2xl font-medium text-[#B6FF40] mb-6 text-center flex items-center justify-center">
               <Rocket className="w-6 h-6 mr-2" />
               Our AI-Powered Approach
             </h3>
@@ -130,7 +130,7 @@ const WhyUsSection = () => {
               {approaches.aiPowered.map((item, index) => (
                 <motion.div
                   key={item.title}
-                  className="bg-[#111111]/50 rounded-lg p-4"
+                  className="bg-[#0B0B0B]/50 rounded-lg p-4"
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
@@ -151,7 +151,10 @@ const WhyUsSection = () => {
           </div>
         </div>
 
-        <div className="text-center text-xs text-gray-500 mb-8">Our Why</div>
+        <div className="relative text-center mb-8">
+          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gray-800"></div>
+          <span className="relative bg-[#0B0B0B] px-4 text-xs text-gray-500">Our Why</span>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#111111] rounded-xl p-8">
           {benefits.map((benefit, index) => (
