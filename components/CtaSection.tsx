@@ -13,9 +13,13 @@ const CtaSection = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, margin: "-50px" }}
         >
-          <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight mb-12">
+          <h2 className="font-playfair text-4xl md:text-5xl text-white leading-tight mb-6">
             Ready to bring your<br />idea to life?
           </h2>
+
+          <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-2xl mx-auto">
+            Limited availability! We only take on 3 clients per month. Share your idea now, and I'll personally get back to you within 24 hours. Let's turn your idea into reality while spots are still available.
+          </p>
 
           <Link
             href="https://tally.so/r/m6y4xA"
