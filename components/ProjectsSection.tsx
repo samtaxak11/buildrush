@@ -52,13 +52,14 @@ const ProjectsSection = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="relative h-64 w-full">
+              <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  priority={index < 2}
                 />
               </div>
               
@@ -104,6 +105,10 @@ const ProjectsSection = () => {
             </motion.div>
           ))}
         </div>
+
+        <p className="text-gray-500 text-sm text-center mt-12 max-w-3xl mx-auto">
+          Note: These are just a few of our publicly shareable projects. We've worked on many more innovative solutions that are currently under NDAs. Feel free to reach out for a private discussion about our full portfolio and capabilities.
+        </p>
       </div>
     </section>
   );
