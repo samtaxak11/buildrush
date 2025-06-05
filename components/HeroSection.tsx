@@ -30,10 +30,10 @@ const HeroSection = () => {
           >
             {/* First Wave */}
             <motion.div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] aspect-[2/1] bg-[#808080]/35"
+              className="absolute bottom-0 left-0 w-full h-[500px] bg-[#808080]/35"
               style={{
-                borderRadius: "50% 50% 0 0",
-                transform: "translateX(-50%)",
+                borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(2)",
               }}
               animate={{
                 y: [0, -40, 0],
@@ -47,10 +47,10 @@ const HeroSection = () => {
 
             {/* Second Wave */}
             <motion.div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[220%] aspect-[2/1] bg-[#A0A0A0]/40"
+              className="absolute bottom-0 left-0 w-full h-[600px] bg-[#A0A0A0]/40"
               style={{
-                borderRadius: "50% 50% 0 0",
-                transform: "translateX(-50%)",
+                borderRadius: "60% 40% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(2.2)",
               }}
               animate={{
                 y: [0, -50, 0],
@@ -65,10 +65,10 @@ const HeroSection = () => {
 
             {/* Third Wave */}
             <motion.div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240%] aspect-[2/1] bg-[#C0C0C0]/45"
+              className="absolute bottom-0 left-0 w-full h-[700px] bg-[#C0C0C0]/45"
               style={{
-                borderRadius: "50% 50% 0 0",
-                transform: "translateX(-50%)",
+                borderRadius: "40% 60% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(1.8)",
               }}
               animate={{
                 y: [0, -45, 0],
