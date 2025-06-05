@@ -35,7 +35,7 @@ const PricingSection = () => {
         </div>
 
         <div className="flex items-center justify-center min-h-[600px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+          <div className="max-w-lg w-full">
             {plans.map((plan, index) => (
               <motion.div
                 key={plan.title}
