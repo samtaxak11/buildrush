@@ -23,20 +23,20 @@ const HeroSection = () => {
         {/* Curved Lines Background */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
-            className="absolute bottom-0 left-0 w-full h-[800px]"
+            className="absolute bottom-0 left-0 w-full h-[1200px]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
             {/* First Wave */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[300px] bg-[#808080]/5"
+              className="absolute bottom-0 left-0 w-full h-[500px] bg-[#808080]/5"
               style={{
                 borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.5)",
+                transform: "scaleX(2)",
               }}
               animate={{
-                y: [0, -20, 0],
+                y: [0, -40, 0],
               }}
               transition={{
                 duration: 8,
@@ -47,13 +47,13 @@ const HeroSection = () => {
 
             {/* Second Wave */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[400px] bg-[#A0A0A0]/3"
+              className="absolute bottom-0 left-0 w-full h-[600px] bg-[#A0A0A0]/3"
               style={{
                 borderRadius: "60% 40% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.8)",
+                transform: "scaleX(2.2)",
               }}
               animate={{
-                y: [0, -30, 0],
+                y: [0, -50, 0],
               }}
               transition={{
                 duration: 10,
@@ -65,13 +65,13 @@ const HeroSection = () => {
 
             {/* Third Wave */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[500px] bg-[#C0C0C0]/2"
+              className="absolute bottom-0 left-0 w-full h-[700px] bg-[#C0C0C0]/2"
               style={{
                 borderRadius: "40% 60% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.6)",
+                transform: "scaleX(1.8)",
               }}
               animate={{
-                y: [0, -25, 0],
+                y: [0, -45, 0],
               }}
               transition={{
                 duration: 12,
