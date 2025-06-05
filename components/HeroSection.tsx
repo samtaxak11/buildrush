@@ -49,8 +49,8 @@ const HeroSection = () => {
             <motion.div
               className="absolute bottom-0 left-0 w-full h-[600px] bg-[#A0A0A0]/40"
               style={{
-                borderRadius: "60% 40% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(2.2)",
+                borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(2)",
               }}
               animate={{
                 y: [0, -50, 0],
@@ -67,8 +67,8 @@ const HeroSection = () => {
             <motion.div
               className="absolute bottom-0 left-0 w-full h-[700px] bg-[#C0C0C0]/45"
               style={{
-                borderRadius: "40% 60% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.8)",
+                borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(2)",
               }}
               animate={{
                 y: [0, -45, 0],
