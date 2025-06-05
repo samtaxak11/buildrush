@@ -1,6 +1,8 @@
+'use client';
+
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { LucideIcon } from "lucide-react";
+import { DivideIcon as LucideIcon } from "lucide-react";
 
 interface NavItem {
   name: string;
@@ -22,7 +24,7 @@ export function NavBar({ items }: NavBarProps) {
               key={item.url}
               href={item.url}
               className={`flex items-center gap-2 px-3 py-1.5 rounded-full transition-all duration-300 hover:bg-gray-100 ${
-                index === 1 || index === items.length - 1 || window.innerWidth > 768
+                index === 1 || index === items.length - 1
                   ? "flex"
                   : "hidden md:flex"
               }`}
