@@ -19,7 +19,69 @@ const HeroSection = () => {
     <section className="bg-[#0B0B0B] pt-32 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[110vh]">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[200%] h-[200%] rounded-[50%] border border-gray-800/50" />
+        
+        {/* Curved Lines Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div 
+            className="absolute bottom-0 left-0 w-full h-[800px]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {/* First Wave */}
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-[300px] bg-[#808080]/5"
+              style={{
+                borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(1.5)",
+              }}
+              animate={{
+                y: [0, -20, 0],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+
+            {/* Second Wave */}
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-[400px] bg-[#A0A0A0]/3"
+              style={{
+                borderRadius: "60% 40% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(1.8)",
+              }}
+              animate={{
+                y: [0, -30, 0],
+              }}
+              transition={{
+                duration: 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1,
+              }}
+            />
+
+            {/* Third Wave */}
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-[500px] bg-[#C0C0C0]/2"
+              style={{
+                borderRadius: "40% 60% 0 0 / 100% 100% 0 0",
+                transform: "scaleX(1.6)",
+              }}
+              animate={{
+                y: [0, -25, 0],
+              }}
+              transition={{
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            />
+          </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
