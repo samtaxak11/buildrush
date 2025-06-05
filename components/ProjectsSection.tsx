@@ -19,13 +19,13 @@ const projects = [
   },
   {
     title: "Brainwave",
-    image: "/Screenshot (135) copy.png",
+    image: "/Screenshot (135).png",
     tags: ["AI Code Editor", "Solana", "Productivity"],
     description: "Brainwave is an AI-powered Web3 code editor designed to help you build Solana dApps seamlessly using AI."
   },
   {
     title: "HooBank",
-    image: "/Screenshot (136) copy.png",
+    image: "/Screenshot (136).png",
     tags: ["Banking", "Credit Cards", "Payments"],
     description: "HooBank is a next-generation payment platform that recommends credit cards tailored to individual needs by analyzing annual percentage rates and fees."
   }
