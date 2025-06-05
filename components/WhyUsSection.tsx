@@ -60,23 +60,6 @@ const approaches = {
   ]
 };
 
-const benefits = [
-  {
-    icon: Network,
-    title1: "MVPs you ",
-    title2: "actually ",
-    title3: "need",
-    description: "No more over-engineered products. We build fantastic, functional, and effective products that founders use to iterate to product-market fit, reducing your capital and time risk.",
-  },
-  {
-    icon: DollarSign,
-    title1: "Only ",
-    title2: "pay",
-    title3: " for what's needed",
-    description: "Avoid paying for unnecessary scope and agency members, or wasting time managing freelancers. Only pay for what's needed, a dedicated duo of designer & developer.",
-  },
-];
-
 const WhyUsSection = () => {
   return (
     <section id="why-us" className="bg-[#0B0B0B] py-24 rounded-t-[48px] rounded-b-[48px] relative">
@@ -149,34 +132,6 @@ const WhyUsSection = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        <div className="relative text-center mb-8">
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-px bg-gray-800"></div>
-          <span className="relative bg-[#0B0B0B] px-4 text-xs text-gray-500">Our Why</span>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#111111] rounded-xl p-8">
-          {benefits.map((benefit, index) => (
-            <motion.div
-              key={benefit.title1}
-              className="flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true, margin: "-50px" }}
-            >
-              <benefit.icon className="h-8 w-8 text-[#B6FF40] mb-4" />
-              <h3 className="text-xl text-white font-medium mb-3">
-                <span className="font-normal">{benefit.title1}</span>
-                <em>{benefit.title2}</em>
-                <span className="font-normal">{benefit.title3}</span>
-              </h3>
-              <p className="text-gray-400 text-sm">
-                {benefit.description}
-              </p>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
