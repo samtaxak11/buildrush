@@ -6,31 +6,31 @@ import { Search, Paintbrush, Layout, Code, Package, Zap, Layers } from "lucide-r
 const processSteps = [
   {
     week: "Week 1",
-    title: "Research",
+    title: "MVP Planning & PRD",
     step: 1,
     description: "We dive into your idea, learn about your audience, and create a strategy to bring your idea to life.",
     icon: Search,
   },
   {
-    week: "Week 2",
-    title: "Design",
+    week: "Week 2-5",
+    title: "Design & Develop",
     step: 2,
-    description: "We design every detail to ensure you showcase your idea clearly, providing a great user experience.",
+    description: "We design every detail for clarity and great UX, coding from scratch so you can learn, iterate, and reach product-market fit.",
     icon: Layout,
   },
   {
-    week: "Week 3-5",
-    title: "Develop",
+    week: "Week 5",
+    title: "Deliver",
     step: 3,
-    description: "We code from scratch so you learn from each user interaction and iterate to product-market fit.",
-    icon: Code,
+    description: "We provide a fully functional MVP, followed by a 48-hour window for founders to review and share feedback, ensuring it aligns with their vision and goals.",
+    icon: Package,
   },
   {
     week: "Week 5-6",
-    title: "Deliver",
+    title: "Maintenance & Support",
     step: 4,
-    description: "We code from scratch so you learn from each user interaction and iterate to product-market fit.",
-    icon: Code,
+    description: "We provide one week support to ensure your MVP runs smoothly, including bug fixes, performance optimizations.",
+    icon: Layers,
   },
 ];
 

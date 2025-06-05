@@ -92,8 +92,8 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
-            We craft MVPs.<br />
-            Fast, <span className="text-[#B6FF40]">Affordable</span> & Hassle&#8209;Free.
+            We craft MVPs,<br />
+            fast, <span className="text-[#B6FF40]">affordable</span> & hassle&#8209;free.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Helping founders bring their product to life, attract
@@ -112,7 +112,7 @@ const HeroSection = () => {
               </svg>
             </a>
             <div className="text-gray-400 text-sm">
-              We're accepting only 3 new clients for May. Fill out the form to share your vision,<br />we'll reply within 24 hours.
+              We're accepting only 3 new clients for June. Fill out the form to<br/> share your vision, we'll reply within 24 hours.
             </div>
             <motion.div
               animate={{
@@ -125,7 +125,7 @@ const HeroSection = () => {
               }}
               className="text-[#B6FF40]"
             >
-              <MoveDown className="mx-auto w-6 h-6" />
+              <MoveDown className="mx-auto w-6 h-5" />
             </motion.div>
           </div>
         </motion.div>
