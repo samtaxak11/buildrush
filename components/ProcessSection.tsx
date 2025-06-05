@@ -9,14 +9,14 @@ const processSteps = [
     title: "MVP Planning & PRD",
     step: 1,
     description: "We dive into your idea, learn about your audience, and create a strategy to bring your idea to life.",
-    icon: Search,
+    icon: Layout,
   },
   {
-    week: "Week 2-5",
+    week: "Week 2-5", 
     title: "Design & Develop",
     step: 2,
     description: "We design every detail for clarity and great UX, coding from scratch so you can learn, iterate, and reach product-market fit.",
-    icon: Layout,
+    icon: Code,
   },
   {
     week: "Week 5",
@@ -64,28 +64,30 @@ const ProcessSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-16 max-w-3xl mx-auto relative">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.title}
-              className="bg-white rounded-lg p-8 border border-gray-100 shadow-[0_2px_4px_rgba(0,0,0,0.1)] 
-                hover:shadow-[0_4px_8px_rgba(0,0,0,0.1)] transition-shadow duration-300 relative"
+              className="relative flex flex-col items-center text-center w-full md:w-auto mb-8 md:mb-0"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="text-sm text-gray-500 mb-1">{step.week}</div>
-              <h3 className="font-playfair text-2xl mb-4 flex items-center gap-2">
-                {step.title}
-                <span className="ml-auto text-lg font-normal text-gray-400">
-                  {step.step}
-                </span>
-              </h3>
-              <p className="text-gray-600 mb-6">{step.description}</p>
-              <div className="mt-auto">
-                <step.icon className="w-12 h-12 text-[#B6FF40]" />
+              <div className="bg-white rounded-lg p-6 border border-gray-200 shadow-lg w-full md:w-[220px] relative z-10">
+                <div className="text-sm text-gray-500 mb-1">{step.week}</div>
+                <h3 className="font-playfair text-xl mb-3">{step.title}</h3>
+                <p className="text-gray-600 text-sm mb-4">{step.description}</p>
+                <step.icon className="w-8 h-8 text-[#B6FF40] mx-auto" />
               </div>
+              
+              {index < processSteps.length - 1 && (
+                <div className="hidden md:block absolute top-1/2 -right-8 transform -translate-y-1/2 z-0">
+                  <div className="w-16 h-[2px] bg-gray-300">
+                    <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-gray-300 rotate-45" />
+                  </div>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
