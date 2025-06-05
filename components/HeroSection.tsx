@@ -86,20 +86,20 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-20">
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mt-24 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
+          <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-8">
             We craft MVPs,<br />
             fast, <span className="text-[#B6FF40]">affordable</span> & hassle&#8209;free.
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+          <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-12">
             Helping founders bring their product to life, attract
             early users, and iterate to product-market fit.
           </p>
-          <div className="space-y-6">
+          <div className="space-y-8">
             <a
               href="https://tally.so/r/m6y4xA"
               target="_blank"
