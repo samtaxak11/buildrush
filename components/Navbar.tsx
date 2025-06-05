@@ -24,62 +24,80 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <CircleIcon className="text-[#B6FF40] w-8 h-8" />
+          {/* <span className="font-playfair text-xl font-bold text-white">
+            build<span className="text-[#B6FF40]">RUSH</span>
+          </span> */}
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          <Link 
-            href="#process" 
-            className="text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            Process
-          </Link>
-          <Link 
-            href="#projects" 
-            className="text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            Work
-          </Link>
-          <Link 
-            href="#faq" 
-            className="text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            FAQ
-          </Link>
-          <Link 
-            href="https://tally.so/r/m6y4xA"
-            target="_blank"
-            rel="noopener noreferrer" 
-            className="flex items-center border border-[#B6FF40] text-[#B6FF40] hover:bg-[#B6FF40]/10 rounded-full px-6 py-2 transition-all duration-300"
-          >
-            Share your Idea
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
-              <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#B6FF40"/>
-            </svg>
-          </Link>
-        </nav>
+        <button 
+          className="lg:hidden text-white"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
-        {/* Mobile Navigation */}
-        <div className="lg:hidden flex items-center space-x-4">
-          <Link 
-            href="#projects"
-            className="text-white hover:text-gray-300 transition-colors duration-200"
-          >
-            Work
-          </Link>
-          <Link 
-            href="https://tally.so/r/m6y4xA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center bg-[#B6FF40] text-[#0B0B0B] font-medium rounded-full px-4 py-2 text-sm"
-          >
-            Share your Idea
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
-              <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#0B0B0B"/>
-            </svg>
-          </Link>
-        </div>
+        <Link 
+          href="#pricing" 
+          className="hidden lg:flex items-center border border-[#B6FF40] text-[#B6FF40] hover:bg-[#B6FF40]/10 rounded-full px-6 py-2 transition-all duration-300"
+        >
+          See Plans
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
+            <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#B6FF40"/>
+          </svg>
+        </Link>
       </div>
+
+      {isMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0B0B0B] border-t border-gray-800 p-4">
+          <nav className="flex flex-col space-y-4">
+            <Link 
+              href="#process" 
+              className="text-white py-2 px-4 hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Process
+            </Link>
+            <Link 
+              href="#projects" 
+              className="text-white py-2 px-4 hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </Link>
+            <Link 
+              href="#faq" 
+              className="text-white py-2 px-4 hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              FAQ
+            </Link>
+            <Link 
+              href="#about" 
+              className="text-white py-2 px-4 hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              href="#course" 
+              className="text-white py-2 px-4 hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Course
+            </Link>
+            <Link 
+              href="#pricing" 
+              className="flex items-center justify-center bg-[#B6FF40] text-[#0B0B0B] font-medium rounded-full px-6 py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              See Plans
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-2">
+                <path d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z" fill="#0B0B0B"/>
+              </svg>
+            </Link>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
