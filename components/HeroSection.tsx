@@ -33,8 +33,8 @@ const HeroSection = () => {
             <motion.div
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-[60vh]"
               style={{
-                background: "linear-gradient(180deg, transparent, rgba(128, 128, 128, 0.03))",
-                borderTop: "1px solid rgba(128, 128, 128, 0.1)",
+                background: "linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.03))",
+                borderTop: "1px solid rgba(255, 255, 255, 0.1)",
                 borderRadius: "50% 50% 0 0",
                 transform: "translateY(50%) scaleX(1.2)",
               }}
@@ -52,8 +52,8 @@ const HeroSection = () => {
             <motion.div
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[180%] h-[50vh]"
               style={{
-                background: "linear-gradient(180deg, transparent, rgba(160, 160, 160, 0.02))",
-                borderTop: "1px solid rgba(160, 160, 160, 0.08)",
+                background: "linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02))",
+                borderTop: "1px solid rgba(255, 255, 255, 0.08)",
                 borderRadius: "60% 40% 0 0",
                 transform: "translateY(50%) scaleX(1.1)",
               }}
@@ -72,8 +72,8 @@ const HeroSection = () => {
             <motion.div
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[160%] h-[40vh]"
               style={{
-                background: "linear-gradient(180deg, transparent, rgba(192, 192, 192, 0.01))",
-                borderTop: "1px solid rgba(192, 192, 192, 0.06)",
+                background: "linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.01))",
+                borderTop: "1px solid rgba(255, 255, 255, 0.06)",
                 borderRadius: "40% 60% 0 0",
                 transform: "translateY(50%) scaleX(1.3)",
               }}
