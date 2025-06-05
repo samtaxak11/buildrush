@@ -20,23 +20,26 @@ const HeroSection = () => {
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
         
-        {/* Curved Lines Background */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* Wave Background Container */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          {/* Wave Lines Container */}
           <motion.div 
-            className="absolute bottom-0 left-0 w-full h-[800px]"
+            className="absolute inset-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
           >
-            {/* First Wave */}
+            {/* First Wave Line */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[300px] bg-[#808080]/5"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200%] h-[60vh]"
               style={{
-                borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.5)",
+                background: "linear-gradient(180deg, transparent, rgba(128, 128, 128, 0.03))",
+                borderTop: "1px solid rgba(128, 128, 128, 0.1)",
+                borderRadius: "50% 50% 0 0",
+                transform: "translateY(50%) scaleX(1.2)",
               }}
               animate={{
-                y: [0, -20, 0],
+                y: ["50%", "45%", "50%"],
               }}
               transition={{
                 duration: 8,
@@ -45,39 +48,43 @@ const HeroSection = () => {
               }}
             />
 
-            {/* Second Wave */}
+            {/* Second Wave Line */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[400px] bg-[#A0A0A0]/3"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[180%] h-[50vh]"
               style={{
-                borderRadius: "60% 40% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.8)",
+                background: "linear-gradient(180deg, transparent, rgba(160, 160, 160, 0.02))",
+                borderTop: "1px solid rgba(160, 160, 160, 0.08)",
+                borderRadius: "60% 40% 0 0",
+                transform: "translateY(50%) scaleX(1.1)",
               }}
               animate={{
-                y: [0, -30, 0],
+                y: ["50%", "40%", "50%"],
               }}
               transition={{
                 duration: 10,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: 1,
+                delay: 0.5,
               }}
             />
 
-            {/* Third Wave */}
+            {/* Third Wave Line */}
             <motion.div
-              className="absolute bottom-0 left-0 w-full h-[500px] bg-[#C0C0C0]/2"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[160%] h-[40vh]"
               style={{
-                borderRadius: "40% 60% 0 0 / 100% 100% 0 0",
-                transform: "scaleX(1.6)",
+                background: "linear-gradient(180deg, transparent, rgba(192, 192, 192, 0.01))",
+                borderTop: "1px solid rgba(192, 192, 192, 0.06)",
+                borderRadius: "40% 60% 0 0",
+                transform: "translateY(50%) scaleX(1.3)",
               }}
               animate={{
-                y: [0, -25, 0],
+                y: ["50%", "35%", "50%"],
               }}
               transition={{
                 duration: 12,
                 repeat: Infinity,
                 ease: "easeInOut",
-                delay: 2,
+                delay: 1,
               }}
             />
           </motion.div>
