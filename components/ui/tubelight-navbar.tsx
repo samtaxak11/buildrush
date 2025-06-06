@@ -41,7 +41,7 @@ export const NavBar = ({
             >
               <item.icon className="h-4 w-4" />
               <span className="text-sm font-medium">
-                {item.name === "Projects" ? "Work" : "Share your Idea"}
+                {item.name === "Work" ? "Work" : "Share your Idea"}
               </span>
             </a>
           ))}
