@@ -14,13 +14,15 @@ import MeetFounderSection from "@/components/MeetFounderSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { Home as HomeIcon, Briefcase, HelpCircle, DollarSign } from 'lucide-react';
+import { Home as HomeIcon, Briefcase, HelpCircle, DollarSign, Lightbulb, RocketIcon, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', url: '#', icon: HomeIcon },
-  { name: 'Projects', url: '#projects', icon: Briefcase },
-  { name: 'FAQ', url: '#faq', icon: HelpCircle },
-  { name: 'Pricing', url: 'https://tally.so/r/m6y4xA', icon: DollarSign }
+  { name: 'Work', url: '#projects', icon: Briefcase },
+  { name: 'Our Process', url: '#how-it-works', icon: RocketIcon },
+  { name: 'Pricing', url: '#pricing', icon: DollarSign },
+  { name: 'Connect on X', url: '', icon: X },
+  { name: 'Share your Idea', url: 'https://tally.so/r/m6y4xA', icon: Lightbulb }
 ];
 
 export default function HomePage() {

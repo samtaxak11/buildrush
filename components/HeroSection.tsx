@@ -16,7 +16,7 @@ const HeroSection = () => {
   if (!mounted) return null;
 
   return (
-    <section className="bg-[#0B0B0B] pt-32 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[110vh]">
+    <section className="bg-[#0B0B0B] pt-24 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[100vh]">
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
         
@@ -107,8 +107,8 @@ const HeroSection = () => {
           </motion.div>
 
           <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl text-white leading-tight mb-6">
-            We craft MVPs.<br />
-            Fast, <span className="text-[#B6FF40]">Affordable</span> & Hassle&#8209;Free.
+            We craft MVPs,<br />
+            fast, <span className="text-[#B6FF40]">affordable</span> & hassle&#8209;free.
           </h1>
           <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
             Helping founders bring their product to life, attract
@@ -127,7 +127,7 @@ const HeroSection = () => {
               </svg>
             </a>
             <div className="text-gray-400 text-sm">
-              We're accepting only 3 new clients for May. Fill out the form to share your vision,<br />we'll reply within 24 hours.
+              We're accepting only 2 new clients for June. Fill out the form to share your vision,<br />we'll reply within 24 hours.
             </div>
             <motion.div
               animate={{
