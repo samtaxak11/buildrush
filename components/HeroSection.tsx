@@ -4,10 +4,11 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { MoveDown } from "lucide-react";
+import { MoveDown, X, AlertCircle } from "lucide-react";
 
 const HeroSection = () => {
   const [mounted, setMounted] = useState(false);
+  const [showAlert, setShowAlert] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -17,6 +18,45 @@ const HeroSection = () => {
 
   return (
     <section className="bg-[#0B0B0B] pt-32 pb-36 relative overflow-hidden rounded-b-[48px] min-h-[110vh]">
+      {/* Alert Banner */}
+      {showAlert && (
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+          className="absolute top-0 left-0 right-0 z-30 bg-gradient-to-r from-[#B6FF40] to-[#a3e636] text-[#0B0B0B] py-3 px-6"
+        >
+          <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <motion.div
+                animate={{ 
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0]
+                }}
+                transition={{ 
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <AlertCircle className="w-5 h-5" />
+              </motion.div>
+              <span className="font-medium text-sm md:text-base">
+                🔥 <strong>2 Spots left for June</strong> - Limited availability!
+              </span>
+            </div>
+            <button
+              onClick={() => setShowAlert(false)}
+              className="p-1 hover:bg-black/10 rounded-full transition-colors duration-200"
+              aria-label="Close alert"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </div>
+        </motion.div>
+      )}
+
       <div className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0B0B]/0 to-[#0B0B0B] z-10" />
         
