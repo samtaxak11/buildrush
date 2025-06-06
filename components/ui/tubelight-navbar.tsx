@@ -1,75 +1,76 @@
 "use client";
 
-import Link from "next/link";
+import React from "react";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-interface NavItem {
-  name: string;
-  url: string;
-  isExternal?: boolean;
-  isSpecial?: boolean;
-}
-
-interface NavBarProps {
-  items?: NavItem[];
-}
-
-export function NavBar({ items }: NavBarProps) {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const navItems: NavItem[] = [
-    { name: 'Home', url: '#' },
-    { name: 'Work', url: '#projects' },
-    { name: 'Process', url: '#how-it-works' },
-    { name: 'Pricing', url: '#pricing' },
-    { name: 'Connect on X', url: 'https://twitter.com/buildrushapp', isExternal: true },
-    { name: 'Share your Idea', url: 'https://tally.so/r/m6y4xA', isExternal: true, isSpecial: true }
-  ];
+export const NavBar = ({
+  items,
+  className,
+}: {
+  items: {
+    name: string;
+    url: string;
+    icon: React.ComponentType<any>;
+  }[];
+  className?: string;
+}) => {
+  // Filter items for mobile - only show "Work" and "Share your Idea"
+  const mobileItems = items.filter(item => 
+    item.name === "Projects" || item.name === "Pricing"
+  );
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
-      <div className="max-w-fit mx-auto">
-        <div className="flex items-center justify-center gap-3 bg-white py-2 px-4 rounded-full shadow-lg">
-          {navItems.map((item, index) => {
-            const isHovered = hoveredIndex === index;
-            
-            return (
-              <Link
-                key={item.name}
-                href={item.url}
-                target={item.isExternal ? "_blank" : undefined}
-                rel={item.isExternal ? "noopener noreferrer" : undefined}
-                className={cn(
-                  "relative px-3 py-1.5 text-sm font-medium transition-colors",
-                  item.isSpecial ? "bg-[#B6FF40] text-black rounded-full" : "text-black hover:text-gray-600",
-                  {
-                    "transition-all duration-300": isHovered,
-                  }
-                )}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                style={{
-                  WebkitTapHighlightColor: "transparent",
-                }}
-              >
-                {isHovered && (
-                  <motion.div
-                    layoutId="hover"
-                    className="absolute bottom-0 left-0 right-0 h-full bg-black/5 rounded-full -z-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  />
-                )}
-                {item.name}
-              </Link>
-            );
-          })}
-        </div>
+    <>
+      {/* Mobile Navigation - Only Projects and Pricing */}
+      <div className={cn(
+        "fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden",
+        className
+      )}>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-center justify-center gap-4 mx-auto w-fit bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3"
+        >
+          {mobileItems.map((item, idx) => (
+            <a
+              key={item.name}
+              href={item.url}
+              className="flex items-center gap-2 text-white hover:text-[#B6FF40] transition-colors duration-200 px-3 py-2 rounded-full hover:bg-white/10"
+            >
+              <item.icon className="h-4 w-4" />
+              <span className="text-sm font-medium">
+                {item.name === "Projects" ? "Work" : "Share your Idea"}
+              </span>
+            </a>
+          ))}
+        </motion.div>
       </div>
-    </div>
+
+      {/* Desktop Navigation - All Items */}
+      <div className={cn(
+        "fixed bottom-0 left-0 right-0 z-50 p-4 hidden md:block",
+        className
+      )}>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-center justify-center gap-2 mx-auto w-fit bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3"
+        >
+          {items.map((item, idx) => (
+            <a
+              key={item.name}
+              href={item.url}
+              className="flex items-center gap-2 text-white hover:text-[#B6FF40] transition-colors duration-200 px-3 py-2 rounded-full hover:bg-white/10"
+            >
+              <item.icon className="h-4 w-4" />
+              <span className="text-sm font-medium">{item.name}</span>
+            </a>
+          ))}
+        </motion.div>
+      </div>
+    </>
   );
-}
+};

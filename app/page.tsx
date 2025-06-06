@@ -20,7 +20,7 @@ const navItems = [
   { name: 'Home', url: '#', icon: HomeIcon },
   { name: 'Projects', url: '#projects', icon: Briefcase },
   { name: 'FAQ', url: '#faq', icon: HelpCircle },
-  { name: 'Pricing', url: '#pricing', icon: DollarSign }
+  { name: 'Pricing', url: 'https://tally.so/r/m6y4xA', icon: DollarSign }
 ];
 
 export default function HomePage() {
