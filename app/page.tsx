@@ -10,6 +10,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import WhoWeWorkWithSection from "@/components/WhoWeWorkWithSection";
 import PricingSection from "@/components/PricingSection";
 import FaqSection from "@/components/FaqSection";
+import MeetFounderSection from "@/components/MeetFounderSection";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/ui/tubelight-navbar";
@@ -46,6 +47,7 @@ export default function HomePage() {
       <WhoWeWorkWithSection />
       <PricingSection />
       <FaqSection />
+      <MeetFounderSection />
       <CtaSection />
       <Footer />
       <NavBar items={navItems} />
