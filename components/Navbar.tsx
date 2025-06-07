@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X, CircleIcon } from "lucide-react";
+import { Menu, CircleIcon } from "lucide-react";
 
 interface NavbarProps {
   isScrolled: boolean;
@@ -33,7 +33,14 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
           rel="noopener noreferrer"
           className="flex items-center space-x-2 bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-gray-700 hover:border-gray-600 rounded-full px-4 py-2 transition-all duration-300 group"
         >
-          <X className="w-4 h-4 text-white group-hover:text-[#B6FF40] transition-colors duration-300" />
+          <svg 
+            className="w-4 h-4 text-white group-hover:text-[#B6FF40] transition-colors duration-300" 
+            fill="currentColor" 
+            viewBox="0 0 24 24" 
+            aria-hidden="true"
+          >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
           <span className="text-white text-sm font-medium group-hover:text-[#B6FF40] transition-colors duration-300">
             Follow Us
           </span>
