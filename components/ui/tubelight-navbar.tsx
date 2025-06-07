@@ -1,8 +1,9 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export const NavBar = ({
   items,
@@ -11,66 +12,65 @@ export const NavBar = ({
   items: {
     name: string;
     url: string;
-    icon: React.ComponentType<any>;
+    icon?: React.ComponentType<any>;
   }[];
   className?: string;
 }) => {
-  // Filter items for mobile - only show "Work" and "Share your Idea"
-  const mobileItems = items.filter(item => 
-    item.name === "Projects" || item.name === "Pricing"
-  );
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [activeIdx, setActiveIdx] = useState<number | null>(null);
 
   return (
-    <>
-      {/* Mobile Navigation - Only Projects and Pricing */}
-      <div className={cn(
-        "fixed bottom-0 left-0 right-0 z-50 p-4 md:hidden",
-        className
-      )}>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="flex items-center justify-center gap-4 mx-auto w-fit bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3"
-        >
-          {mobileItems.map((item, idx) => (
-            <a
-              key={item.name}
-              href={item.url}
-              className="flex items-center gap-2 text-white hover:text-[#B6FF40] transition-colors duration-200 px-3 py-2 rounded-full hover:bg-white/10"
-            >
-              <item.icon className="h-4 w-4" />
-              <span className="text-sm font-medium">
-                {item.name === "Work" ? "Work" : "Share your Idea"}
-              </span>
-            </a>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Desktop Navigation - All Items */}
-      <div className={cn(
+    <div
+      className={cn(
         "fixed bottom-0 left-0 right-0 z-50 p-4 hidden md:block",
         className
-      )}>
-        <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          className="flex items-center justify-center gap-2 mx-auto w-fit bg-black/80 backdrop-blur-md border border-white/10 rounded-full px-6 py-3"
-        >
-          {items.map((item, idx) => (
-            <a
-              key={item.name}
-              href={item.url}
-              className="flex items-center gap-2 text-white hover:text-[#B6FF40] transition-colors duration-200 px-3 py-2 rounded-full hover:bg-white/10"
-            >
-              <item.icon className="h-4 w-4" />
-              <span className="text-sm font-medium">{item.name}</span>
-            </a>
-          ))}
-        </motion.div>
+      )}
+    >
+      <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center space-x-2 bg-black/80 backdrop-blur-md rounded-full px-4 py-3 border border-gray-800">
+          {items.map((item, idx) => {
+            const Icon = item.icon;
+            const isShareIdea = item.name === "Share your Idea";
+            
+            return (
+              <Link
+                key={item.name}
+                href={item.url}
+                target={item.url.startsWith('http') ? '_blank' : undefined}
+                rel={item.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className={cn(
+                  "relative flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                  isShareIdea 
+                    ? "bg-[#B6FF40] text-[#0B0B0B] hover:bg-[#a3e636] hover:shadow-[0_0_20px_rgba(182,255,64,0.3)]"
+                    : "text-gray-300 hover:text-white hover:bg-white/10"
+                )}
+                onMouseEnter={() => setHoveredIdx(idx)}
+                onMouseLeave={() => setHoveredIdx(null)}
+                onClick={() => setActiveIdx(idx)}
+              >
+                {Icon && (
+                  <Icon className={cn(
+                    "w-4 h-4",
+                    isShareIdea ? "text-[#0B0B0B]" : ""
+                  )} />
+                )}
+                <span>{item.name}</span>
+                
+                {!isShareIdea && hoveredIdx === idx && (
+                  <motion.div
+                    className="absolute inset-0 bg-white/10 rounded-full"
+                    layoutId="hoverBackground"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </>
+    </div>
   );
 };
