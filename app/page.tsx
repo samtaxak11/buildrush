@@ -63,7 +63,7 @@ const navItems = [
   { name: 'Work', url: '#projects', icon: Briefcase },
   { name: 'Our Process', url: '#how-it-works', icon: RocketIcon },
   { name: 'Pricing', url: '#pricing', icon: DollarSign },
-  { name: 'Connect on X', url: '', icon: X },
+  { name: 'Connect on X', url: 'https://x.com/buildrushagency', icon: X },
   { name: 'Share your Idea', url: 'https://tally.so/r/m6y4xA', icon: Lightbulb }
 ];
 
