@@ -83,7 +83,7 @@ const ProjectsSection = () => {
                   {project.description}
                 </p>
                 
-                <Link
+                {/* <Link
                   href="#"
                   className="inline-flex items-center text-[#B6FF40] hover:text-[#a3e636] font-medium transition-colors duration-200"
                 >
@@ -100,7 +100,7 @@ const ProjectsSection = () => {
                       fill="currentColor"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </div>
             </motion.div>
           ))}

@@ -20,8 +20,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Simple Suite - MVPs for Startups',
-  description: 'We craft minimum viable digital products for startups. Save time, capital, & attention.',
+  title: 'BuildRush - MVPs for Founders',
+  description: 'We craft MVPs for Founders. Fast, Affordable, and Hassle-Free.',
 };
 
 export default function RootLayout({
