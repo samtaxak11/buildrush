@@ -22,6 +22,20 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'BuildRush Agency - MVPs for Founders',
   description: 'We craft MVPs for Founders. Fast, Affordable, and Hassle-Free.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.svg',
+        type: 'image/svg+xml',
+      },
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      }
+    ],
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({
