@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'BuildRush - MVPs for Founders',
+  title: 'BuildRush Agency - MVPs for Founders',
   description: 'We craft MVPs for Founders. Fast, Affordable, and Hassle-Free.',
 };
 
