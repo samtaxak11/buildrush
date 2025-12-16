@@ -5,7 +5,7 @@ import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import { NavBar } from "@/components/ui/tubelight-navbar";
-import { Home as HomeIcon, Briefcase, HelpCircle, DollarSign, Lightbulb, RocketIcon, X } from 'lucide-react';
+import { Home as HomeIcon, Briefcase, HelpCircle, DollarSign, Lightbulb, RocketIcon, Instagram } from 'lucide-react';
 
 // Dynamically import non-critical sections with loading states
 const ProcessSection = dynamic(() => import("@/components/ProcessSection"), {
@@ -63,7 +63,7 @@ const navItems = [
   { name: 'Work', url: '#projects', icon: Briefcase },
   { name: 'Our Process', url: '#how-it-works', icon: RocketIcon },
   { name: 'Pricing', url: '#pricing', icon: DollarSign },
-  { name: 'Connect on X', url: 'https://x.com/buildrushagency', icon: X },
+  { name: 'Connect', url: 'https://www.instagram.com/build.rush', icon: Instagram },
   { name: 'Share your Idea', url: 'https://tally.so/r/m6y4xA', icon: Lightbulb }
 ];
 
@@ -106,7 +106,6 @@ export default function HomePage() {
           <WhoWeWorkWithSection />
           <PricingSection />
           <FaqSection />
-          <MeetFounderSection />
           <CtaSection />
           <Footer />
         </>

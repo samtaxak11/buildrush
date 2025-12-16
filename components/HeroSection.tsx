@@ -160,7 +160,7 @@ const HeroSection = ({ onLoaded }: HeroSectionProps) => {
             <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1a1a2e] to-[#16213e] border border-[#B6FF40]/20 rounded-full px-4 py-2 md:px-6 md:py-3 shadow-lg backdrop-blur-sm">
               <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#B6FF40] rounded-full animate-pulse"></div>
               <span className="text-white text-xs md:text-sm font-medium">
-                <span className="text-[#B6FF40] font-semibold">2 Spots left</span> for June
+                <span className="text-[#B6FF40] font-semibold">2 Spots left</span> for January
               </span>
             </div>
           </motion.div>
@@ -186,7 +186,7 @@ const HeroSection = ({ onLoaded }: HeroSectionProps) => {
               </svg>
             </a>
             <div className="text-gray-400 text-sm">
-              We're accepting only 2 new clients for June. Fill out the form to share your vision,<br />we'll reply within 24 hours.
+              We're accepting only 2 new clients for January.<br /> Fill out the form to share your vision, we'll reply within 24 hours.
             </div>
             <motion.div
               animate={{
